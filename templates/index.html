@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InfraFlow AI - Deployment Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>InfraFlow AI - Deployment Analyzer</h2>
+
+<form action="/analyze" method="POST">
+
+    <div class="form-group">
+        <label>Project Name:</label>
+        <input type="text" name="project" required>
+    </div>
+
+    <div class="form-group">
+        <label>Application Type:</label>
+        <select name="app_type">
+            <option>Web App</option>
+            <option>API</option>
+            <option>Static Site</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Traffic:</label>
+        <select name="traffic">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Database Required:</label>
+        <select name="database">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+    </div>
+
+    <button type="submit">Analyze</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
+

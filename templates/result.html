@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Report</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .low { color: green; font-weight: bold; }
+        .medium { color: orange; font-weight: bold; }
+        .high { color: red; font-weight: bold; }
+
+        .progress {
+            width: 100%;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .bar {
+            height: 20px;
+            background: #4CAF50;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>AI Deployment Analysis</h2>
+
+<p><b>Project:</b> {{ project }}</p>
+
+<p><b>Risk Level:</b>
+<span class="{{ risk|lower }}">{{ risk }}</span>
+</p>
+
+<p><b>Confidence Score:</b> {{ confidence }}%</p>
+
+<div class="progress">
+    <div class="bar" style="width: {{ confidence }}%;">
+        {{ confidence }}%
+    </div>
+</div>
+
+<h3>AI Recommendations:</h3>
+<ul>
+{% for item in recommendation %}
+    <li><b>{{ item.title }}</b>: {{ item.reason }}</li>
+{% endfor %}
+</ul>
+
+<br>
+<a href="/">Analyze Another</a>
+
+</div>
+
+</body>
+</html>
